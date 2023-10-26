@@ -40,9 +40,11 @@ const motoDoIgor = new Moto("XRE 300", "Honda", 2009);
 console.log(motoDoIgor);
 motoDoIgor.ligarMotor();
 motoDoIgor.empinarMoto();
+motoDoIgor.desligarMotor();
 
 const carroDoThiago = new Carro("SW4", "Toyota", 4);
 
 console.log(carroDoThiago);
 carroDoThiago.ligarMotor();
 carroDoThiago.cavaloDePau();
+carroDoThiago.desligarMotor();
