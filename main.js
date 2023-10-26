@@ -1,12 +1,48 @@
-function Moto(modelo, fabricante, anoModelo, anoFabricacao) {
+class Veiculo {
+    constructor(modelo, fabricante) {
     this.modelo = modelo;
     this.fabricante = fabricante;
-    this.anoModelo = anoModelo;
-    this.anoFabricacao = anoFabricacao;
+    }
+
+    ligarMotor() {
+        console.log("Motor ligado");
+    }
+
+    desligarMotor() {
+        console.log("Motor desligado");
+    }
 }
 
-const motoDoIgor = new Moto("XRE 300", "Honda", 2009, 2008);
-const motoDoThiago = new Moto("Fat Boy", "Harley-Davidson", 1989, 1988);
+class Moto extends Veiculo {
+    constructor(modelo, fabricante, anoFabricacao) {
+        super(modelo, fabricante);
+        this.anoFabricacao = anoFabricacao;
+    }
+
+    empinarMoto() {
+        console.log("A moto está sendo empinada.");
+    }
+}
+
+class Carro extends Veiculo {
+    constructor(modelo, fabricante, portas) {
+        super(modelo, fabricante);
+        this.portas = portas;
+    }
+
+    cavaloDePau() {
+        console.log("O carro deu um cavalo de pau.");
+    }
+}
+
+const motoDoIgor = new Moto("XRE 300", "Honda", 2009);
 
 console.log(motoDoIgor);
-console.log(motoDoThiago);
+motoDoIgor.ligarMotor();
+motoDoIgor.empinarMoto();
+
+const carroDoThiago = new Carro("SW4", "Toyota", 4);
+
+console.log(carroDoThiago);
+carroDoThiago.ligarMotor();
+carroDoThiago.cavaloDePau();
